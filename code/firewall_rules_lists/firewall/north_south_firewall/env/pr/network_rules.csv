@@ -1,0 +1,4 @@
+rule_collection,action,rule_name,source_address,destination_fqdn,protocol_type,protocol_port,priority
+nesp-pr-globalrules-nco,Allow,nesp-pr-443-apps-nrl,nesp_ipg_Azure_Network,"AppService, AppService.WestEurope, AppService.NorthEurope, AzureMonitor, Storage, Storage.WestEurope, Storage.NorthEurope",TCP,"443, 80",326
+nesp-pr-globalrules-nco,Allow,Nesp-pr-7999-bitbucket-nrl,10.118.4.96/28,52.166.71.39,TCP,7999,332
+nesp-pr-tap-nco,Allow,nesp-pr-27017-mongodb-atlas-nrl,10.118.10.64/26,20.82.49.39/32,TCP,27017,341

@@ -1,0 +1,8 @@
+rule_collection,action,rule_name,source_address,destination_fqdn,protocol_type,protocol_port,priority
+nesp-np-globalrules-nco,Allow,nesp-np-443-apps-nrl,nesp_ipg_Azure_Network,"AppService, AppService.WestEurope, AppService.NorthEurope, AzureMonitor, Storage, Storage.WestEurope, Storage.NorthEurope",TCP,"443, 80",325
+nesp-np-globalrules-nco,Allow,nesp-np-1443-alloutbound-nrl,nesp_ipg_All_Internal_Network,nesp_ipg_All_Internal_Network,TCP,1443,327
+nesp-np-globalrules-nco,Allow,nesp-np-3443-alloutbound-nrl,nesp_ipg_All_Internal_Network,nesp_ipg_All_Internal_Network,TCP,3443,328
+nesp-np-globalrules-nco,Allow,nesp-np-443-alloutbound-nrl,"nesp_ipg_euwe_pr_Azure_Network, nesp_ipg_euwe_np_Azure_Network",nesp_ipg_All_Internal_Network,TCP,443,329
+nesp-np-globalrules-nco,Allow,nesp-np-443-akamaiinbound-nrl,"nesp_ipg_usea_akamai, nesp_ipg_asse_akamai, nesp_ipg_euwe_akamai","nesp_ipg_euwe_pr_Azure_Network, nesp_ipg_euwe_np_Azure_Network, nesp_ipg_usea_pr_Azure_Network, nesp_ipg_usea_np_Azure_Network, nesp_ipg_asse_pr_Azure_Network, nesp_ipg_asse_np_Azure_Network",TCP,"443, 80",330
+nesp-np-globalrules-nco,Allow,nesp-np-7999-bitbucket-nrl,10.118.5.96/28,52.166.71.39,TCP,7999,331
+nesp-np-tap-nco,Allow,nesp-np-27017-mongodb-atlas-nrl,10.118.10.64/26,20.82.49.39/32,TCP,27017,340

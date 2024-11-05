@@ -1,0 +1,17 @@
+rule_collection,action,rule_name,source_address,destination_fqdn,protocol_type,protocol_port,priority
+nesp-pr-inventory-aco,Allow,nesp-pr-powerShellGallery-arl,nesp_ipg_euwe_pr_inventory,"onegetcdn.azureedge.net, *.powershellgallery.com",Https,443,501
+nesp-pr-ncstrackorder-aco,Allow,nesp-pr-allowFunctions-arl,10.118.8.0/23,"HDInsight, AppServiceEnvironment","Https,Http","443, 80",502
+nesp-pr-ncstrackorder-aco,Allow,nesp-pr-parcelPerform-arl,10.118.8.0/23,api.parcelperform.com,"Https,Http","443, 80",503
+nesp-pr-globalrules-aco,Allow,nesp-pr-443-microsoft-arl,nesp_ipg_Azure_Network,"*.microsoft.com, *.windows.net, *.azure.com, *.windowsupdate.com, *.microsoftonline.com, *.akamaized.net, *.office.com","Https,Http","443, 80",507
+nesp-pr-globalrules-aco,Allow,nesp-pr-443-nespresso-arl,nesp_ipg_Azure_Network,*.nespresso.com,"Https,Http","443, 80",509
+nesp-pr-globalrules-aco,Allow,nesp-pr-443-brinqa-arl,nesp_ipg_Azure_Network,*.brinqa.net,"Https,Http","443, 80",511
+nesp-pr-globalrules-aco,Allow,nesp-pr-443-qualys-arl,nesp_ipg_Azure_Network,*.qualys.eu,"Https,Http","443, 80",513
+nesp-pr-globalrules-aco,Allow,nesp-pr-443-k8s-arl,nesp_ipg_Azure_Network,"*.pkg.dev, *.k8s.io, *.azmk8s.io","Https,Http","443, 80",515
+nesp-pr-globalrules-aco,Allow,nesp-pr-443-aks-arl,nesp_ipg_Azure_Network,AzureKubernetesService,"Https,Http","443, 80",517
+nesp-pr-globalrules-aco,Allow,nesp-pr-443-narvar-arl,nesp_ipg_Azure_Network,*.narvar.com,"Https,Http","443, 80",519
+nesp-pr-globalrules-aco,Allow,nesp-pr-443-coveo-arl,nesp_ipg_Azure_Network,*.coveo.com,"Https,Http","443, 80",521
+nesp-pr-globalrules-aco,Allow,nesp-pr-443-aws-arl,nesp_ipg_Azure_Network,*.amazonaws.com,"Https,Http","443, 80",523
+nesp-pr-globalrules-aco,Allow,Nesp-pr-443-docker-arl,10.118.4.96/28,"*.docker.io, *.docker.com","Https,Http","443, 80",525
+nesp-pr-globalrules-aco,Allow,Nesp-pr-443-k8s2-arl,10.118.4.96/28,*.k8s.io,"Https,Http","443, 80",527
+nesp-pr-globalrules-aco,Allow,Nesp-pr-443-cloudfront-arl,10.118.4.96/28,*.cloudfront.net,"Https,Http","443, 80",529
+nesp-pr-globalrules-aco,Allow,Nesp-pr-443-twistlock-arl,nesp_ipg_Azure_Network,*.twistlock.com,"Https,Http","443, 80",531

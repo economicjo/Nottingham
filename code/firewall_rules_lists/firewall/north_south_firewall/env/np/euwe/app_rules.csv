@@ -1,0 +1,16 @@
+rule_collection,action,rule_name,source_address,destination_fqdn,protocol_type,protocol_port,priority
+nesp-np-ncstrackorder-aco,Allow,nesp-np-allowFunctions-arl,10.118.10.0/23,"HDInsight, AppServiceEnvironment","Https,Http","443, 80",504
+nesp-np-ncstrackorder-aco,Allow,nesp-np-parcelPerform-arl,10.118.10.32/27,api.parcelperform.com,"Https,Http","443, 80",505
+nesp-np-globalrules-aco,Allow,nesp-np-443-microsoft-arl,nesp_ipg_Azure_Network,"*.microsoft.com, *.windows.net, *.azure.com, *.windowsupdate.com, *.microsoftonline.com, *.akamaized.net, *.office.com","Https,Http","443, 80",506
+nesp-np-globalrules-aco,Allow,nesp-np-443-nespresso-arl,nesp_ipg_Azure_Network,*.nespresso.com,"Https,Http","443, 80",508
+nesp-np-globalrules-aco,Allow,nesp-np-443-brinqa-arl,nesp_ipg_Azure_Network,*.brinqa.net,"Https,Http","443, 80",510
+nesp-np-globalrules-aco,Allow,nesp-np-443-qualys-arl,nesp_ipg_Azure_Network,*.qualys.eu,"Https,Http","443, 80",512
+nesp-np-globalrules-aco,Allow,nesp-np-443-k8s-arl,nesp_ipg_Azure_Network,"*.pkg.dev, *.k8s.io, *.azmk8s.io","Https,Http","443, 80",514
+nesp-np-globalrules-aco,Allow,nesp-np-443-aks-arl,nesp_ipg_Azure_Network,AzureKubernetesService,"Https,Http","443, 80",516
+nesp-np-globalrules-aco,Allow,nesp-np-443-narvar-arl,nesp_ipg_Azure_Network,"*.narvar.com, *narvar.qa","Https,Http","443, 80",518
+nesp-np-globalrules-aco,Allow,nesp-np-443-coveo-arl,nesp_ipg_Azure_Network,*.coveo.com,"Https,Http","443, 80",520
+nesp-np-globalrules-aco,Allow,nesp-np-443-aws-arl,nesp_ipg_Azure_Network,*.amazonaws.com,"Https,Http","443, 80",522
+nesp-np-globalrules-aco,Allow,Nesp-np-443-docker-arl,10.118.5.96/28,"*.docker.io, *.docker.com","Https,Http","443, 80",524
+nesp-np-globalrules-aco,Allow,nesp-np-443-k8s2-arl,10.118.5.96/28,*.k8s.io,"Https,Http","443, 80",526
+nesp-np-globalrules-aco,Allow,nesp-np-443-cloudfront-arl,10.118.5.96/28,*.cloudfront.net,"Https,Http","443, 80",528
+nesp-np-globalrules-aco,Allow,nesp-np-443-twistlock-arl,nesp_ipg_Azure_Network,"*.twistlock.com, *.azurecr.io","Https,Http","443, 80",530

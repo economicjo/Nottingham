@@ -1,0 +1,7 @@
+rule_collection,action,rule_name,source_address,destination_fqdn,translated_address,protocol_type,protocol_port,priority,translated_port
+nesp-pr-ncsdataaggregator-dco,Dnat,nesp-pr-fnc-80-drl,*,52.178.109.104,10.118.8.69,TCP,80,102,80
+nesp-pr-ncsdataaggregator-dco,Dnat,nesp-pr-fnc-443-drl,*,52.178.109.104,10.118.8.69,TCP,443,103,443
+nesp-pr-ncstrackorder-dco,Dnat,nesp-pr-fnc-80-drl,*,52.233.165.113,10.118.8.68,TCP,80,112,80
+nesp-pr-ncstrackorder-dco,Dnat,nesp-pr-fnc-443-drl,*,52.233.165.113,10.118.8.68,TCP,443,113,443
+nesp-pr-msp-dco,Dnat,nesp-pr-aks-80-drl,*,52.178.109.29,10.118.4.105,TCP,80,122,80
+nesp-pr-msp-dco,Dnat,nesp-pr-aks-443-drl,*,52.178.109.29,10.118.4.105,TCP,443,123,443

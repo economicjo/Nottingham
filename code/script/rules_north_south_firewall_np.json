@@ -1,0 +1,753 @@
+{
+    "resource": "azurerm_firewall_policy_rule_collection_group",
+    "rule_collection": [
+        {
+            "name": "example_group_name",
+            "firewall_policy_id": "example_policy_id",
+            "priority": 124,
+            "nat_rule_collection": [
+                {
+                    "name": "nesp-np-msp-dco",
+                    "priority": 100,
+                    "action": "Dnat",
+                    "rules": [
+                        {
+                            "name": "nesp-dv-aks-80-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.117.15",
+                            "destination_ports": [
+                                "80"
+                            ],
+                            "translated_address": "10.118.5.105",
+                            "translated_port": "80"
+                        },
+                        {
+                            "name": "nesp-dv-aks-443-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.117.15",
+                            "destination_ports": [
+                                "443"
+                            ],
+                            "translated_address": "10.118.5.105",
+                            "translated_port": "443"
+                        }
+                    ]
+                },
+                {
+                    "name": "nesp-np-ncsdataaggregator-dco",
+                    "priority": 101,
+                    "action": "Dnat",
+                    "rules": [
+                        {
+                            "name": "nesp-dv-fnc-80-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.117.95",
+                            "destination_ports": [
+                                "80"
+                            ],
+                            "translated_address": "10.118.10.72",
+                            "translated_port": "80"
+                        },
+                        {
+                            "name": "nesp-dv-fnc-443-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.117.95",
+                            "destination_ports": [
+                                "443"
+                            ],
+                            "translated_address": "10.118.10.72",
+                            "translated_port": "443"
+                        },
+                        {
+                            "name": "nesp-in-fnc-80-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.116.22",
+                            "destination_ports": [
+                                "80"
+                            ],
+                            "translated_address": "10.118.10.76",
+                            "translated_port": "80"
+                        },
+                        {
+                            "name": "nesp-in-fnc-443-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.116.22",
+                            "destination_ports": [
+                                "443"
+                            ],
+                            "translated_address": "10.118.10.76",
+                            "translated_port": "443"
+                        },
+                        {
+                            "name": "nesp-st-fnc-80-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.112.140",
+                            "destination_ports": [
+                                "80"
+                            ],
+                            "translated_address": "10.118.10.75",
+                            "translated_port": "80"
+                        },
+                        {
+                            "name": "nesp-st-fnc-443-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.112.140",
+                            "destination_ports": [
+                                "443"
+                            ],
+                            "translated_address": "10.118.10.75",
+                            "translated_port": "443"
+                        },
+                        {
+                            "name": "nesp-ro-fnc-80-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.115.105",
+                            "destination_ports": [
+                                "80"
+                            ],
+                            "translated_address": "10.118.10.74",
+                            "translated_port": "80"
+                        },
+                        {
+                            "name": "nesp-ro-fnc-443-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.115.105",
+                            "destination_ports": [
+                                "443"
+                            ],
+                            "translated_address": "10.118.10.74",
+                            "translated_port": "443"
+                        }
+                    ]
+                },
+                {
+                    "name": "nesp-np-ncstrackorder-dco",
+                    "priority": 102,
+                    "action": "Dnat",
+                    "rules": [
+                        {
+                            "name": "nesp-dv-fnc-80-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.115.157",
+                            "destination_ports": [
+                                "80"
+                            ],
+                            "translated_address": "10.118.10.69",
+                            "translated_port": "80"
+                        },
+                        {
+                            "name": "nesp-dv-fnc-443-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.115.157",
+                            "destination_ports": [
+                                "443"
+                            ],
+                            "translated_address": "10.118.10.69",
+                            "translated_port": "443"
+                        },
+                        {
+                            "name": "nesp-in-fnc-80-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.116.144",
+                            "destination_ports": [
+                                "80"
+                            ],
+                            "translated_address": "10.118.10.68",
+                            "translated_port": "80"
+                        },
+                        {
+                            "name": "nesp-in-fnc-443-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.116.144",
+                            "destination_ports": [
+                                "443"
+                            ],
+                            "translated_address": "10.118.10.68",
+                            "translated_port": "443"
+                        },
+                        {
+                            "name": "nesp-st-fnc-80-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.117.164",
+                            "destination_ports": [
+                                "80"
+                            ],
+                            "translated_address": "10.118.10.70",
+                            "translated_port": "80"
+                        },
+                        {
+                            "name": "nesp-st-fnc-443-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.117.164",
+                            "destination_ports": [
+                                "443"
+                            ],
+                            "translated_address": "10.118.10.70",
+                            "translated_port": "443"
+                        },
+                        {
+                            "name": "nesp-ro-fnc-80-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.116.244",
+                            "destination_ports": [
+                                "80"
+                            ],
+                            "translated_address": "10.118.10.71",
+                            "translated_port": "80"
+                        },
+                        {
+                            "name": "nesp-ro-fnc-443-drl",
+                            "protocols": [
+                                "TCP"
+                            ],
+                            "source_addresses": [
+                                "*"
+                            ],
+                            "destination_address": "20.61.116.244",
+                            "destination_ports": [
+                                "443"
+                            ],
+                            "translated_address": "10.118.10.71",
+                            "translated_port": "443"
+                        }
+                    ]
+                }
+            ],
+            "network_rule_collection": [
+                {
+                    "name": "nesp-np-globalrules-nco",
+                    "priority": 103,
+                    "action": "Allow",
+                    "rules": [
+                        {
+                            "name": "nesp-np-443-apps-nrl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_Azure_Network"
+                            ],
+                            "destination_addresses": [
+                                "AppService",
+                                "AppService.WestEurope",
+                                "AppService.NorthEurope",
+                                "AzureMonitor",
+                                "Storage",
+                                "Storage.WestEurope",
+                                "Storage.NorthEurope"
+                            ],
+                            "destination_ports": [
+                                "443",
+                                "80"
+                            ],
+                            "protocols": [
+                                "TCP"
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-1443-alloutbound-nrl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_All_Internal_Network"
+                            ],
+                            "destination_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_All_Internal_Network"
+                            ],
+                            "destination_ports": [
+                                "1443"
+                            ],
+                            "protocols": [
+                                "TCP"
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-3443-alloutbound-nrl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_All_Internal_Network"
+                            ],
+                            "destination_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_All_Internal_Network"
+                            ],
+                            "destination_ports": [
+                                "3443"
+                            ],
+                            "protocols": [
+                                "TCP"
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-443-alloutbound-nrl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_euwe_pr_Azure_Network",
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_euwe_np_Azure_Network"
+                            ],
+                            "destination_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_All_Internal_Network"
+                            ],
+                            "destination_ports": [
+                                "443"
+                            ],
+                            "protocols": [
+                                "TCP"
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-443-akamaiinbound-nrl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_usea_akamai",
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_asse_akamai",
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_euwe_akamai"
+                            ],
+                            "destination_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_euwe_pr_Azure_Network",
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_euwe_np_Azure_Network",
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_usea_pr_Azure_Network",
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_usea_np_Azure_Network",
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_asse_pr_Azure_Network",
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_asse_np_Azure_Network"
+                            ],
+                            "destination_ports": [
+                                "443",
+                                "80"
+                            ],
+                            "protocols": [
+                                "TCP"
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-7999-bitbucket-nrl",
+                            "source_addresses": [
+                                "10.118.5.96/28"
+                            ],
+                            "destination_addresses": [
+                                "52.166.71.39"
+                            ],
+                            "destination_ports": [
+                                "7999"
+                            ],
+                            "protocols": [
+                                "TCP"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "nesp-np-tap-nco",
+                    "priority": 104,
+                    "action": "Allow",
+                    "rules": [
+                        {
+                            "name": "nesp-np-27017-mongodb-atlas-nrl",
+                            "source_addresses": [
+                                "10.118.10.64/26"
+                            ],
+                            "destination_addresses": [
+                                "20.82.49.39/32"
+                            ],
+                            "destination_ports": [
+                                "27017"
+                            ],
+                            "protocols": [
+                                "TCP"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "application_rule_collection": [
+                {
+                    "name": "nesp-np-ncstrackorder-aco",
+                    "priority": 105,
+                    "action": "Allow",
+                    "rules": [
+                        {
+                            "name": "nesp-np-allowFunctions-arl",
+                            "source_addresses": [
+                                "10.118.10.0/23"
+                            ],
+                            "destination_fqdn": [
+                                "HDInsight",
+                                "AppServiceEnvironment"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-parcelPerform-arl",
+                            "source_addresses": [
+                                "10.118.10.32/27"
+                            ],
+                            "destination_fqdn_tags": [
+                                "api.parcelperform.com"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "nesp-np-globalrules-aco",
+                    "priority": 106,
+                    "action": "Allow",
+                    "rules": [
+                        {
+                            "name": "nesp-np-443-microsoft-arl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_Azure_Network"
+                            ],
+                            "destination_fqdn_tags": [
+                                "*.microsoft.com",
+                                "*.windows.net",
+                                "*.azure.com",
+                                "*.windowsupdate.com",
+                                "*.microsoftonline.com",
+                                "*.akamaized.net",
+                                "*.office.com"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-443-nespresso-arl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_Azure_Network"
+                            ],
+                            "destination_fqdn_tags": [
+                                "*.nespresso.com"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-443-brinqa-arl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_Azure_Network"
+                            ],
+                            "destination_fqdn_tags": [
+                                "*.brinqa.net"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-443-qualys-arl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_Azure_Network"
+                            ],
+                            "destination_fqdn_tags": [
+                                "*.qualys.eu"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-443-k8s-arl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_Azure_Network"
+                            ],
+                            "destination_fqdn_tags": [
+                                "*.pkg.dev",
+                                "*.k8s.io",
+                                "*.azmk8s.io"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-443-aks-arl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_Azure_Network"
+                            ],
+                            "destination_fqdn": [
+                                "AzureKubernetesService"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-443-narvar-arl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_Azure_Network"
+                            ],
+                            "destination_fqdn_tags": [
+                                "*.narvar.com",
+                                "*narvar.qa"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-443-coveo-arl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_Azure_Network"
+                            ],
+                            "destination_fqdn_tags": [
+                                "*.coveo.com"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-443-aws-arl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_Azure_Network"
+                            ],
+                            "destination_fqdn_tags": [
+                                "*.amazonaws.com"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Nesp-np-443-docker-arl",
+                            "source_addresses": [
+                                "10.118.5.96/28"
+                            ],
+                            "destination_fqdn_tags": [
+                                "*.docker.io",
+                                "*.docker.com"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-443-k8s2-arl",
+                            "source_addresses": [
+                                "10.118.5.96/28"
+                            ],
+                            "destination_fqdn_tags": [
+                                "*.k8s.io"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-443-cloudfront-arl",
+                            "source_addresses": [
+                                "10.118.5.96/28"
+                            ],
+                            "destination_fqdn_tags": [
+                                "*.cloudfront.net"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        },
+                        {
+                            "name": "nesp-np-443-twistlock-arl",
+                            "source_ip_groups": [
+                                "/subscriptions/052085ce-1c15-489c-9a9f-9fc29729dfd2/resourceGroups/nesp-pr-hub.ip-group-rgp/providers/Microsoft.Network/ipGroups/nesp_ipg_Azure_Network"
+                            ],
+                            "destination_fqdn_tags": [
+                                "*.twistlock.com",
+                                "*.azurecr.io"
+                            ],
+                            "protocols": [
+                                {
+                                    "type": "Https",
+                                    "port": 443
+                                },
+                                {
+                                    "type": "Http",
+                                    "port": 80
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

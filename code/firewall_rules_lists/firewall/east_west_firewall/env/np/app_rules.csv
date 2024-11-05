@@ -1,0 +1,2 @@
+rule_collection,action,rule_name,source_address,destination_fqdn,protocol_type,protocol_port,priority
+nesp-np-tap-aco,Allow,nesp-np-80-vpn-global-protect-arl,nesp_ipg_glbl_global_protect_vpn,10.118.10.78,HTTP,80,532
