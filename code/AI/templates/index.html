@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis Automático del JSON</title>
+</head>
+<body>
+    <h1>Resultado del Análisis del JSON</h1>
+    <h2>Archivo: {{ result.file }}</h2>
+    <p>{{ result.analysis }}</p>
+
+    <h3>Preguntar más detalles sobre el análisis</h3>
+    <form id="questionForm">
+        <input type="text" id="question" placeholder="Escribe tu pregunta aquí" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h3>Respuesta:</h3>
+    <p id="answer"></p>
+
+    <script>
+        document.getElementById("questionForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const question = document.getElementById("question").value;
+            const previous_analysis = "{{ result.analysis }}";
+
+            const response = await fetch("/ask", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ question, previous_analysis })
+            });
+
+            const data = await response.json();
+            document.getElementById("answer").innerText = data.answer;
+        });
+    </script>
+</body>
+</html>
+

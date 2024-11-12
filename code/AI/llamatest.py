@@ -1,63 +1,62 @@
 import os
 import json
-import requests
+import webbrowser
+from flask import Flask, render_template, request, jsonify
+from openai import OpenAI
+
+# Configura tu API Key de OpenAI
+client = OpenAI(api_key="")
 
 # Directorio de los JSON
 JSON_DIR = "/mnt/c/Users/djbur/Desktop/Nottingham/code/script"
-API_URL = "http://127.0.0.1:8000/v1/completions"
 
-# Filtro para archivos JSON de firewall
-def is_firewall_json(file_name):
-    return "firewall" in file_name.lower() and file_name.endswith('.json')
+app = Flask(__name__)
 
-# Función para dividir un JSON en fragmentos
-def split_json(data, chunk_size=512):
-    data_str = json.dumps(data)
-    tokens = [data_str[i:i + chunk_size] for i in range(0, len(data_str), chunk_size)]
-    return tokens
-
-# Función para analizar un fragmento JSON de firewall
-def analyze_firewall_chunk(chunk):
-    response = requests.post(API_URL, json={
-        "model": "gpt2",
-        "prompt": f"Analiza el siguiente fragmento de configuración de firewall:\n{chunk}",
-        "max_tokens": 100
-    })
-    
-    if response.status_code == 200:
-        return response.json()
-    else:
-        print(f"Error al analizar fragmento: {response.text}")
-        return None
-
-# Función para analizar un JSON de firewall
-def analyze_firewall_json(file_path):
-    with open(file_path, 'r') as file:
-        json_data = json.load(file)
-    
-    results = []
-    for chunk in split_json(json_data):
-        result = analyze_firewall_chunk(chunk)
-        if result:
-            results.append(result)
-    return results
-
-# Procesa todos los JSON de firewall
-def process_firewall_jsons():
-    final_results = []
+def auto_analyze_all_jsons():
+    all_json_data = []
     for file_name in os.listdir(JSON_DIR):
-        if is_firewall_json(file_name):
+        if file_name.endswith(".json") and "firewall" in file_name.lower():
             file_path = os.path.join(JSON_DIR, file_name)
-            print(f"Analizando {file_path}...")
-            analysis_result = analyze_firewall_json(file_path)
-            if analysis_result:
-                final_results.append({"file": file_name, "analysis": analysis_result})
-    return final_results
+            with open(file_path, 'r') as file:
+                json_data = json.load(file)
+                all_json_data.append({file_name: json_data})
+    
+    prompt = "Analiza los siguientes archivos JSON de configuración de firewall y proporciona recomendaciones específicas de seguridad para cada uno:\n\n"
+    for json_item in all_json_data:
+        for file_name, data in json_item.items():
+            prompt += f"Archivo: {file_name}\n{json.dumps(data, indent=2)}\n\n"
 
-# Ejecuta el análisis y muestra resultados
-if __name__ == "__main__":
-    firewall_analysis_results = process_firewall_jsons()
-    for result in firewall_analysis_results:
-        print(f"Archivo: {result['file']}")
-        print("Análisis:", result['analysis'])
-        print("-" * 50)
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[{"role": "user", "content": prompt}],
+    )
+    analysis_result = response.choices[0].message.content
+
+    # Formatear en HTML para mejor legibilidad
+    formatted_analysis = "<p>" + analysis_result.replace("\n", "</p><p>") + "</p>"
+    return {"analysis": formatted_analysis}
+
+# Ruta inicial para mostrar el análisis y la interfaz de chat
+@app.route('/')
+def index():
+    analysis_result = auto_analyze_all_jsons()
+    return render_template('chat.html', initial_analysis=analysis_result)
+
+# Ruta para manejar las preguntas de seguimiento en el chat
+@app.route('/ask', methods=['POST'])
+def ask_question():
+    conversation_history = request.json.get("conversation_history")
+
+    # Crear el prompt completo con todo el historial de la conversación
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {"role": "user", "content": conversation_history}
+        ],
+    )
+    answer = response.choices[0].message.content
+    return jsonify({"answer": answer})
+
+if __name__ == '__main__':
+    webbrowser.open("http://127.0.0.1:5000")
+    app.run(debug=False)
